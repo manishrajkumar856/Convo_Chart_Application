@@ -15,6 +15,7 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(cors()); // Allow from all origin
+app.use(express.static('./public'));
 
 app.use('/api', publicRouter);
 app.use('/api/user/auth', UserRouter);

@@ -18,7 +18,7 @@ const FriendCard = ({cardData, imgData}) => {
         }
 
         try {
-           const response = await  axios.post('http://localhost:9000/api/sendFriendRequest', 
+           const response = await  axios.post('https://convo-chart-application.onrender.com/api/sendFriendRequest', 
             requestData,
             {
                 headers: {

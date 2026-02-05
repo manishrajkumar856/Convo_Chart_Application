@@ -57,7 +57,7 @@ const SignupForm = () => {
     console.log(getSignupData);
 
     try {
-      const response = await axios.post('https://convo-chart-application.onrender.com/api/user/auth/signup',
+      const response = await axios.post('https://convo-chart-application-1.onrender.com/api/user/auth/signup',
         { UserData: getSignupData }
       );
 

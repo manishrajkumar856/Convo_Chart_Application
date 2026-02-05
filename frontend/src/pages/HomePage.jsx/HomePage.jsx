@@ -13,7 +13,7 @@ const HomePage = () => {
   const friendSuggestion = async () => {
     try {
       const response = await axios.get(
-        "https://convo-chart-application.onrender.com/api/getFriendSugg",
+        "https://convo-chart-application-1.onrender.com/api/getFriendSugg",
         {
           headers: {
             Authorization: `Bearer ${token}`,

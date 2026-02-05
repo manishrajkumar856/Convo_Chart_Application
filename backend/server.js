@@ -14,7 +14,7 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors()); // Allow from all origin
+// app.use(cors()); // Allow from all origin
 app.use(cors({
   origin: 'https://chat-app-c3s6.onrender.com', // allow your frontend
   methods: ['GET', 'POST', 'PUT', 'DELETE'],

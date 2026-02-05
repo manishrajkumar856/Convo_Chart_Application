@@ -16,23 +16,13 @@ const app = express();
 app.use(express.json());
 // app.use(cors()); // Allow from all origin
 
-
-const allowedOrigins = [
-  "https://convo-chart-application-1.onrender.com", // deployed frontend
-  "http://localhost:9000"                           // dev environment
-];
-
+// Or explicitly:
 app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
+  origin: "*",
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  credentials: true
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
+
 
 app.use(express.static('./public'));
 

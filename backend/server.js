@@ -15,7 +15,7 @@ const app = express();
 // Middleware
 app.use(express.json());
 // app.use(cors()); // Allow from all origin
-import cors from "cors";
+
 
 const allowedOrigins = [
   "https://convo-chart-application-1.onrender.com", // deployed frontend

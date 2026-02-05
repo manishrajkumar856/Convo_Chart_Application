@@ -15,9 +15,22 @@ const app = express();
 // Middleware
 app.use(express.json());
 // app.use(cors()); // Allow from all origin
+import cors from "cors";
+
+const allowedOrigins = [
+  "https://convo-chart-application-1.onrender.com", // deployed frontend
+  "http://localhost:9000"                           // dev environment
+];
+
 app.use(cors({
-  origin: 'https://chat-app-c3s6.onrender.com', // allow your frontend
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true
 }));
 

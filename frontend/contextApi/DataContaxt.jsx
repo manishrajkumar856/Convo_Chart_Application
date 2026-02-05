@@ -20,7 +20,7 @@ function DataContextProvider({ children }) {
     // Setting Loader
     setDataLoader(true);
     try {
-      const res = await axios.get("https://convo-chart-application.onrender.com/api/", {
+      const res = await axios.get("https://convo-chart-application-1.onrender.com/api/", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -42,7 +42,7 @@ function DataContextProvider({ children }) {
   async function getDataUsingId(id) {
     try {
       const response = await axios.get(
-        `https://convo-chart-application.onrender.com/api/getUser/${id}`,
+        `https://convo-chart-application-1.onrender.com/api/getUser/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
